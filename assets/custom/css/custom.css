@@ -1,0 +1,49 @@
+/* Definování barev používaných na webu */
+.prim-barva {
+    /*background-color: #129FEA;*/
+    background-color: #c87f0a;
+    color: white;
+}
+
+.sek-barva {
+    /*background: #95c9ec;*/
+    background-color: burlywood;
+    color: white;
+}
+
+.thd-barva {
+    background: #d4860b;
+}
+.tab-barva {
+    background: white;
+    color: black;
+}
+/* Úpravy existujících tříd */
+.form-control {
+    background-color: white;
+    color: black;
+}
+
+.table {
+    background: white;
+    color: black;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+/* Barvy odkazů */
+a:link {
+  color: red;
+}
+a:visited {
+  color: red;
+}
+a:hover {
+  color: orange;
+}
+a:active {
+  color: red;
+}
