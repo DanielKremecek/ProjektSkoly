@@ -1,5 +1,5 @@
 <br>
-<div class="card mb-3">
+<div class="card mb-3 tab-barva">
     <div  class="card-header prim-barva">
         <h3 align="center">Přihlášení</h3>
     </div>

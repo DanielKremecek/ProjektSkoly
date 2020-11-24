@@ -16,7 +16,7 @@
     foreach ($data as $skola){?>
     <script>
         var marker = L.marker([<?php echo $skola->geolat?>, <?php echo $skola->geolong ?>]).addTo(map);
-            marker.bindPopup("<b><?php echo $skola->nazev?></b><br><?php echo $skola->nazevMesta?>");
+            marker.bindPopup("<b><?php echo $skola->nazev?></b><br><?php echo $skola->pocet?>");
     </script><?php 
     
     }?>

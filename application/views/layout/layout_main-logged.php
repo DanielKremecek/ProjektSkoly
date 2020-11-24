@@ -11,6 +11,7 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
         <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets/custom/js/ddtf.js'); ?>" type="text/javascript"></script>
         <!-- flexdatalist -->
         <link href="<?php echo base_url('assets/flexdatalist/css/jquery.flexdatalist.min.css'); ?>" rel="stylesheet" type="text/css"/>
         <script src="<?php echo base_url('assets/flexdatalist/js/jquery.flexdatalist.min.js'); ?>" type="text/javascript"></script>

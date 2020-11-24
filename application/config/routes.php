@@ -65,5 +65,7 @@ $route['admin'] = 'Dashboard_controller/dashboard';
 $route['admin/dashboard'] = 'Dashboard_controller/dashboard';
 $route['admin/logout'] = 'Dashboard_controller/logout';
 
-$route['admin/movies'] = 'movies';
+$route['admin/pridaniMesta'] = 'Mesto_controller/index';
+$route['admin/pridaniSkoly'] = 'Skola_controller/index';
+$route['admin/pridaniPoctu'] = 'Pocet_prijatych_controller/index';
 $route['admin/countries'] = 'countries';
