@@ -14,19 +14,10 @@ class Pocet_prijatych_model extends CI_Model {
     
     // Zobrazení všech záznamů
     function fetch_data() {
-        /*$this->db->select("*");
-        $this->db->from("mesto");
-        $query = $this->db->get();
-        return $query;*/
-        //$query = $this->db->select('skola.id id, skola.nazev nazev, mesto.nazev, skola.geolat geolat, skola.geolong geolong')
-        //->from('pocet_prijatych, skola')
         $query = $this->db->select('pocet_prijatych.id id, obor.nazev obor, skola.nazev skola, pocet_prijatych.pocet pocet, pocet_prijatych.rok rok')
         ->from('pocet_prijatych')        
         ->join('skola', 'pocet_prijatych.skola = skola.id') 
         ->join('obor', 'pocet_prijatych.obor = obor.id')
-        /*$this->db->select("*");
-        $this->db->from("pocet_prijatych");
-        $query = $this->db->get();*/
         ->get();
         return $query;
     }
