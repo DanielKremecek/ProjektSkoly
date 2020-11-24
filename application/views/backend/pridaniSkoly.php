@@ -14,23 +14,7 @@
                     <span class="text-danger"><?php echo form_error("nazev"); ?></span>
                 </div>
             </div>
-          <div class="form-group row">  
-                <label for="form-nazev" class="col-sm-2 col-form-label prim-barva">Město</label> 
-                <div class="col-sm-10">
-                    <input type="text" name="mesto" value="<?php echo $row->mesto; ?>" class="form-control" id="form-mesto"/>  
-                    <select name="mesto" class="form-control" id="mytable">
-                    <?php  
-                    if($fetch_data->num_rows() > 0)  {  
-                        foreach($fetch_data->result() as $row)  {  
-                    ?>  
-                        <option><?php echo $row->mestoNazev; ?></option>
-                    <?php       
-                    }  
-                    }  
-                     ?>
-                    </select>
-                </div>
-            </div>
+          
             <div class="form-group row">  
                 <label for="form-geolat" class="col-sm-2 col-form-label prim-barva">geolat</label> 
                 <div class="col-sm-10">
@@ -43,6 +27,22 @@
                 <div class="col-sm-10">
                     <input type="text" name="geolong" value="<?php echo $row->geolong; ?>" class="form-control" id="form-geolong"/>  
                     <span class="text-danger"><?php echo form_error("geolong"); ?></span>
+                </div>
+            </div>
+            <div class="form-group row">  
+                <label for="form-mesto" class="col-sm-2 col-form-label prim-barva">Město</label> 
+                <div class="col-sm-10">
+                    <select name="mesto" class="form-control" id="mesto">
+                    <?php  
+                    if($fetch_data->num_rows() > 0)  {  
+                        foreach($fetch_data->result() as $row)  {  
+                    ?>  
+                        <option><?php echo $row->mesto; ?></option>
+                    <?php       
+                    }  
+                    }  
+                     ?>
+                    </select>
                 </div>
             </div>
             <div align="center" class="form-group">  
@@ -64,22 +64,7 @@
                     <span class="text-danger"><?php echo form_error("nazev"); ?></span>
                 </div>
             </div>
-            <div class="form-group row">  
-                <label for="form-geolat" class="col-sm-2 col-form-label prim-barva">Město</label> 
-                <div class="col-sm-10">
-                    <select name="mesto" class="form-control" id="mesto">
-                    <?php  
-                    if($fetch_data->num_rows() > 0)  {  
-                        foreach($fetch_data->result() as $row)  {  
-                    ?>  
-                        <option class=""><?php echo $row->mesto; ?></option>
-                    <?php       
-                    }  
-                    }  
-                     ?>
-                    </select>
-                </div>
-            </div>
+            
             <div class="form-group row">  
                 <label for="form-geolat" class="col-sm-2 col-form-label prim-barva">geolat</label> 
                 <div class="col-sm-10">
@@ -93,7 +78,23 @@
                     <input type="text" name="geolong" class="form-control" id="form-geolong"/>  
                     <span class="text-danger"><?php echo form_error("geolong"); ?></span>
                 </div>
-            </div>   
+            </div>  
+            <div class="form-group row">  
+                <label for="form-geolat" class="col-sm-2 col-form-label prim-barva">Město</label> 
+                <div class="col-sm-10">
+                    <select name="mesto" class="form-control" id="mesto">
+                    <?php  
+                    if($fetch_data->num_rows() > 0)  {  
+                        foreach($fetch_data->result() as $row)  {  
+                    ?>  
+                        <option><?php echo $row->mesto; ?></option>
+                    <?php       
+                    }  
+                    }  
+                     ?>
+                    </select>
+                </div>
+            </div>
             <div align="center" class="form-group">  
                 <input type="submit" name="insert" value="Zapsat" class="btn prim-barva btn-lg" />  
             </div>       
@@ -104,11 +105,11 @@
            <?php  
            if($this->uri->segment(2) == "inserted")  
            {
-                echo '<div class="alert alert-success" align="center">Údaje o akci pro seznam škol byly přidány do databáze</div>';  
+                echo '<div class="alert alert-success" align="center">Škola byla přidána do databáze</div>';  
            }  
            if($this->uri->segment(2) == "updated")  
            {  
-                echo '<div class="alert alert-success" align="center">Údaje o akci pro seznam škol byly úspěšně upraveny</div>';  
+                echo '<div class="alert alert-success" align="center">Údaje o škole byly úspěšně upraveny</div>';  
            }  
            ?>  
     </div>
@@ -174,9 +175,3 @@
         });  
     });  
 </script>  
-
-<script src="<?php echo base_url('assets/jquery/jquery-3.2.1.min.js'); ?>" type="text/javascript"></script>
-<script src="<?php echo base_url('assets/custom/js/ddtf.js'); ?>" type="text/javascript"></script>
-<script>
-    $('#mytable').ddTableFilter();
-</script>

@@ -10,28 +10,13 @@
             <div class="form-group row">  
                 <label for="form-nazev" class="col-sm-2 col-form-label prim-barva">Obor</label> 
                 <div class="col-sm-10">
-                    <select name="obor" value="<?php echo $row->obor; ?>" class="form-control" id="form-obor">
-                        <option><?php if($row->obor=="IT"){ echo "selected";} ?>IT</option>
-                        <option><?php if($row->obor=="OA"){ echo "selected";} ?>OA</option>
+                    <select name="obor" value="<?php echo $row->id_oboru; ?>" class="form-control" id="form-obor">
+                            <option <?php if($row->id_oboru=="2"){ echo "selected";} ?>>IT</option>
+                            <option <?php if($row->id_oboru=="1"){ echo "selected";} ?>>OA</option>
                     </select>
                 </div>
             </div>
-            <div class="form-group row">  
-                <label for="form-geolat" class="col-sm-2 col-form-label prim-barva">Škola</label> 
-                <div class="col-sm-10">
-                    <select name="skola" class="form-control" id="skola">
-                    <?php  
-                    if($fetch_data->num_rows() > 0)  {  
-                        foreach($fetch_data->result() as $row)  {  
-                    ?>  
-                        <option><?php echo $row->skola; ?></option>
-                    <?php       
-                    }  
-                    }  
-                     ?>
-                    </select>
-                </div>
-            </div>
+            
             <div class="form-group row">
                     <label for="form-delka_min" class="col-sm-2 col-form-label prim-barva">Počet</label>
                     <div class="col-sm-10">
@@ -44,6 +29,22 @@
                 <div class="col-sm-10">
                     <input type="text" name="rok" value="<?php echo $row->rok; ?>" class="form-control" id="form-rok"/>  
                     <span class="text-danger"><?php echo form_error("rok"); ?></span>
+                </div>
+            </div>
+            <div class="form-group row">  
+                <label for="form-geolat" class="col-sm-2 col-form-label prim-barva">Škola</label> 
+                <div class="col-sm-10">
+                    <select name="skola" class="form-control" id="skola">
+                    <?php  
+                    if($fetch_data->num_rows() > 0)  {  
+                        foreach($fetch_data->result() as $row)  {  
+                    ?>  
+                        <option value="<?php echo $row->id_skoly; ?>"><?php echo $row->skola ?></option>
+                    <?php       
+                    }  
+                    }  
+                     ?>
+                    </select>
                 </div>
             </div>
             <div align="center" class="form-group">  
@@ -59,34 +60,11 @@
             <div class="form-group row">  
                 <label for="form-nazev" class="col-sm-2 col-form-label prim-barva">Obor</label> 
                 <div class="col-sm-10">
-                    <select name="obor" class="form-control" id="obor">
-                    <?php  
-                    if($fetch_data->num_rows() > 0)  {  
-                        foreach($fetch_data->result() as $row)  {  
-                    ?>  
-                        <option><?php echo $row->obor; ?></option>
-                    <?php       
-                    }  
-                    }  
-                     ?>
+                    <select name="obor" class="form-control" id="form-obor">
+                            <option <?php $row->obor=="2" ?>>IT</option>
+                            <option <?php $row->obor=="1" ?>>OA</option>
                     </select>
                     <span class="text-danger"><?php echo form_error("obor"); ?></span>
-                </div>
-            </div>
-            <div class="form-group row">  
-                <label for="form-geolat" class="col-sm-2 col-form-label prim-barva">Škola</label> 
-                <div class="col-sm-10">
-                    <select name="skola" class="form-control" id="skola">
-                    <?php  
-                    if($fetch_data->num_rows() > 0)  {  
-                        foreach($fetch_data->result() as $row)  {  
-                    ?>  
-                        <option><?php echo $row->skola; ?></option>
-                    <?php       
-                    }  
-                    }  
-                     ?>
-                    </select>
                 </div>
             </div>
             <div class="form-group row">  
@@ -102,7 +80,23 @@
                     <input type="text" name="rok" class="form-control" id="form-rok"/>  
                     <span class="text-danger"><?php echo form_error("rok"); ?></span>
                 </div>
-            </div> 
+            </div>
+            <div class="form-group row">  
+                <label for="form-geolat" class="col-sm-2 col-form-label prim-barva">Škola</label> 
+                    <div class="col-sm-10">
+                    <select name="skola" class="form-control" id="skola">
+                    <?php  
+                    if($fetch_data->num_rows() > 0)  {  
+                        foreach($fetch_data->result() as $row)  {  
+                    ?>  
+                        <option value="<?php echo $row->id_skoly; ?>"><?php echo $row->skola ?></option>
+                    <?php       
+                    }  
+                    }  
+                     ?>
+                    </select>
+                    </div>
+            </div>
             <div align="center" class="form-group">  
                 <input type="submit" name="insert" value="Zapsat" class="btn prim-barva btn-lg" />  
             </div>       

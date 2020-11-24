@@ -11,7 +11,7 @@
  *
  * @author kremecek_daniel
  */
-class Skola_controller extends Admin_Controller {
+class Skola_controller extends CI_Controller {
 
     public function index() {
         $this->layout->setLayout('layout/layout_main-logged');
@@ -31,7 +31,7 @@ class Skola_controller extends Admin_Controller {
             $this->load->model("Skola_model");
             $data = array(
                 "nazev"=>$this->input->post("nazev"),
-                "mesto"=>$this->input->post("nazev"),
+                "mesto"=>$this->input->post("mesto"),
                 "geolat"=>$this->input->post("geolat"),
                 "geolong"=>$this->input->post("geolong")
             );

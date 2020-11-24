@@ -24,6 +24,7 @@ class Pocet_prijatych_controller extends Admin_Controller {
     
     public function form_validation() {
         $this->form_validation->set_rules("obor", "Název školy", "required");
+        $this->form_validation->set_rules("id_oboru", "ID oboru", "required");
         $this->form_validation->set_rules("skola", "Škola", "required");
         $this->form_validation->set_rules("pocet", "Počet", "required");
         $this->form_validation->set_rules("rok", "rok", "required");
@@ -31,6 +32,7 @@ class Pocet_prijatych_controller extends Admin_Controller {
             $this->load->model("Pocet_prijatych_model");
             $data = array(
                 "obor"=>$this->input->post("obor"),
+                "id_oboru"=>$this->input->post("id_oboru"),
                 "skola"=>$this->input->post("skola"),
                 "pocet"=>$this->input->post("pocet"),
                 "rok"=>$this->input->post("rok")

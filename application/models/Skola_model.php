@@ -19,6 +19,11 @@ class Skola_model extends CI_Model {
         ->join('mesto', 'skola.mesto = mesto.id') 
         ->get();
         return $query;
+        
+        /*$this->db->select("*");
+        $this->db->from("skola");
+        $query = $this->db->get();
+        return $query;*/
     }
     
     // Vymazání záznamu
