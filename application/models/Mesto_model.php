@@ -14,14 +14,10 @@ class Mesto_model extends CI_Model {
     
     // Zobrazení všech záznamů
     function fetch_data() {
-        /*$this->db->select("*");
+        $this->db->select("*");
         $this->db->from("mesto");
         $query = $this->db->get();
-        return $query;*/
-        $query = $this->db->select('skola.id id, skola.nazev nazev, mesto.nazev nazevMesta, skola.geolat geolat, skola.geolong geolong')
-        //->from('pocet_prijatych, skola')
-        ->from('skola')        
-        ->join('mesto', 'mesto.nazev = skola.id');
+        return $query;
     }
     
     // Vymazání záznamu

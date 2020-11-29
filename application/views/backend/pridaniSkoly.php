@@ -30,14 +30,14 @@
                 </div>
             </div>
             <div class="form-group row">  
-                <label for="form-mesto" class="col-sm-2 col-form-label prim-barva">Město</label> 
+                <label for="form-nazev_mesta" class="col-sm-2 col-form-label prim-barva">Město</label> 
                 <div class="col-sm-10">
-                    <select name="mesto" class="form-control" id="mesto">
+                    <select name="nazev_mesta" value="<?php echo $row->mesto; ?>" class="form-control" id="nazev_mesta">
                     <?php  
-                    if($fetch_data->num_rows() > 0)  {  
-                        foreach($fetch_data->result() as $row)  {  
+                    if($mesta_data->num_rows() > 0)  {  
+                        foreach($mesta_data->result() as $row)  {  
                     ?>  
-                        <option><?php echo $row->mesto; ?></option>
+                        <option><?php echo $row->nazev_mesta; ?></option>
                     <?php       
                     }  
                     }  
@@ -84,10 +84,10 @@
                 <div class="col-sm-10">
                     <select name="mesto" class="form-control" id="mesto">
                     <?php  
-                    if($fetch_data->num_rows() > 0)  {  
-                        foreach($fetch_data->result() as $row)  {  
+                    if($mesta_data->num_rows() > 0)  {  
+                        foreach($mesta_data->result() as $row)  {  
                     ?>  
-                        <option><?php echo $row->mesto; ?></option>
+                        <option value="<?php echo $row->mesto; ?>"><?php echo $row->nazev_mesta; ?></option>
                     <?php       
                     }  
                     }  
@@ -114,7 +114,7 @@
            ?>  
     </div>
       <br /><br />  
-      <h3>Seznam škol</h3><br />  
+      <h3 align="center">Seznam škol</h3><br />  
     <div class="card-body">
         <div class="table-responsive">  
             <table class="table">  

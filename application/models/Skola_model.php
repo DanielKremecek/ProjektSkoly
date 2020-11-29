@@ -13,6 +13,15 @@ class Skola_model extends CI_Model {
     }
     
     // Zobrazení všech záznamů
+    function mesta_data() {
+        $query = $this->db->select('mesto.nazev nazev_mesta, skola.mesto mesto')
+        ->distinct('skola.mesto')        
+        ->from('skola') 
+        ->join('mesto', 'skola.mesto = mesto.id') 
+        ->get();
+        return $query;
+    }
+    
     function fetch_data() {
         $query = $this->db->select('skola.id id, skola.nazev nazev, mesto.nazev mesto, skola.geolat geolat, skola.geolong geolong')
         ->from('skola') 
@@ -43,7 +52,7 @@ class Skola_model extends CI_Model {
     
     // Edit záznamu o akce
     function update_data($data, $id) {
-        $this->db->where("id", $id);
+        $this->db->where("id_skoly", $id);
         $this->db->update("skola", $data);
         // UPDATE akce SET nazev="$nazev" WHERE id_akce="$id";
     }

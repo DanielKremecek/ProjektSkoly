@@ -17,14 +17,15 @@ class Pocet_prijatych_controller extends Admin_Controller {
         $this->layout->setLayout('layout/layout_main-logged');
         $this->load->model("Pocet_prijatych_model");  
         $data["fetch_data"] = $this->Pocet_prijatych_model->fetch_data();
-        $data['title'] = "Administrace počtu";
+        $data["obor_data"] = $this->Pocet_prijatych_model->obor_data();
+        $data["skola_data"] = $this->Pocet_prijatych_model->skola_data();
+        $data['title'] = "Administrace počtu | insert";
         $data['main'] = 'backend/pridaniPoctu';
         $this->layout->generate($data);
     }
     
     public function form_validation() {
-        $this->form_validation->set_rules("obor", "Název školy", "required");
-        $this->form_validation->set_rules("id_oboru", "ID oboru", "required");
+        $this->form_validation->set_rules("obor", "Obor", "required");
         $this->form_validation->set_rules("skola", "Škola", "required");
         $this->form_validation->set_rules("pocet", "Počet", "required");
         $this->form_validation->set_rules("rok", "rok", "required");
@@ -32,7 +33,6 @@ class Pocet_prijatych_controller extends Admin_Controller {
             $this->load->model("Pocet_prijatych_model");
             $data = array(
                 "obor"=>$this->input->post("obor"),
-                "id_oboru"=>$this->input->post("id_oboru"),
                 "skola"=>$this->input->post("skola"),
                 "pocet"=>$this->input->post("pocet"),
                 "rok"=>$this->input->post("rok")
@@ -70,6 +70,8 @@ class Pocet_prijatych_controller extends Admin_Controller {
         $this->load->model("Pocet_prijatych_model");
         $data["user_data"] = $this->Pocet_prijatych_model->fetch_single_data($user_id);
         $data["fetch_data"] = $this->Pocet_prijatych_model->fetch_data();
+        $data["obor_data"] = $this->Pocet_prijatych_model->obor_data();
+        $data["skola_data"] = $this->Pocet_prijatych_model->skola_data();
         $this->layout->setLayout('layout/layout_main-logged');
         $data["title"] = "Administrace počtu";
         $data["main"] = "backend/pridaniPoctu";

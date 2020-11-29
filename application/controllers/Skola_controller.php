@@ -17,6 +17,7 @@ class Skola_controller extends CI_Controller {
         $this->layout->setLayout('layout/layout_main-logged');
         $this->load->model("Skola_model");  
         $data["fetch_data"] = $this->Skola_model->fetch_data();
+        $data["mesta_data"] = $this->Skola_model->mesta_data();
         $data['title'] = "Administrace školy | insert";
         $data['main'] = 'backend/pridaniSkoly';
         $this->layout->generate($data);
@@ -68,6 +69,7 @@ class Skola_controller extends CI_Controller {
         $this->load->model("Skola_model");
         $data["user_data"] = $this->Skola_model->fetch_single_data($user_id);
         $data["fetch_data"] = $this->Skola_model->fetch_data();
+        $data["mesta_data"] = $this->Skola_model->mesta_data();
         $this->layout->setLayout('layout/layout_main-logged');
         $data["title"] = "Administrace škol | update";
         $data["main"] = "backend/pridaniSkoly";
